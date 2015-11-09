@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="6" passed="6">
+  <reporter-output>
+    <line>
+      <![CDATA[STEP1]]>
+    </line>
+    <line>
+      <![CDATA[STEP2]]>
+    </line>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="364370" started-at="2015-11-09T17:23:44Z" finished-at="2015-11-09T17:29:48Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="364370" started-at="2015-11-09T17:23:44Z" finished-at="2015-11-09T17:29:48Z">
+      <class name="com.twc.AD_TestSuite.Smoke_Test">
+        <test-method status="PASS" signature="Capabilites()[pri:0, instance:com.twc.AD_TestSuite.Smoke_Test@3ac3fd8b]" name="Capabilites" duration-ms="85153" started-at="2015-11-09T22:53:44Z" finished-at="2015-11-09T22:55:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Capabilites -->
+        <test-method status="PASS" signature="AND_PulltoRefresh()[pri:0, instance:com.twc.AD_TestSuite.Smoke_Test@3ac3fd8b]" name="AND_PulltoRefresh" duration-ms="13168" started-at="2015-11-09T22:55:09Z" finished-at="2015-11-09T22:55:22Z">
+          <reporter-output>
+            <line>
+              <![CDATA[STEP1]]>
+            </line>
+            <line>
+              <![CDATA[STEP2]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- AND_PulltoRefresh -->
+        <test-method status="PASS" signature="c334146_Verify_adon_HourlyExtended_page()[pri:0, instance:com.twc.AD_TestSuite.Smoke_Test@3ac3fd8b]" name="c334146_Verify_adon_HourlyExtended_page" duration-ms="150784" started-at="2015-11-09T22:55:22Z" finished-at="2015-11-09T22:57:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- c334146_Verify_adon_HourlyExtended_page -->
+        <test-method status="PASS" signature="c334151_Verify_adon_10DaysExtended_page()[pri:0, instance:com.twc.AD_TestSuite.Smoke_Test@3ac3fd8b]" name="c334151_Verify_adon_10DaysExtended_page" duration-ms="38810" started-at="2015-11-09T22:57:53Z" finished-at="2015-11-09T22:58:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- c334151_Verify_adon_10DaysExtended_page -->
+        <test-method status="PASS" signature="c334147_Verify_adon_MapsExtended_page()[pri:0, instance:com.twc.AD_TestSuite.Smoke_Test@3ac3fd8b]" name="c334147_Verify_adon_MapsExtended_page" duration-ms="39053" started-at="2015-11-09T22:58:32Z" finished-at="2015-11-09T22:59:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- c334147_Verify_adon_MapsExtended_page -->
+        <test-method status="PASS" signature="c334148_Verify_adon_NewsExtended_page()[pri:0, instance:com.twc.AD_TestSuite.Smoke_Test@3ac3fd8b]" name="c334148_Verify_adon_NewsExtended_page" duration-ms="37378" started-at="2015-11-09T22:59:11Z" finished-at="2015-11-09T22:59:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- c334148_Verify_adon_NewsExtended_page -->
+      </class> <!-- com.twc.AD_TestSuite.Smoke_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

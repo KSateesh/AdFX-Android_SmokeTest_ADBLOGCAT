@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.twc.AD_TestSuite.Smoke_Test">
+        <methods>
+          <include name="c334147_Verify_adon_MapsExtended_page"/>
+          <include name="c334148_Verify_adon_NewsExtended_page"/>
+          <include name="AND_PulltoRefresh"/>
+          <include name="c334146_Verify_adon_HourlyExtended_page"/>
+          <include name="c334151_Verify_adon_10DaysExtended_page"/>
+        </methods>
+      </class> <!-- com.twc.AD_TestSuite.Smoke_Test -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
