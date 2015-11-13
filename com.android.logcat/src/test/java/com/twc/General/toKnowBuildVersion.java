@@ -19,6 +19,8 @@ public class toKnowBuildVersion extends Driver {
 
 	public void moreOptionsClick() throws InterruptedException {
 
+        System.out.println("Get the Build version of APP");
+        
 		// Clicking on More Options
 		WebElement more = Ad.findElement(By.xpath("//android.view.View[1]/android.widget.FrameLayout[2]/android.view.View[1]/android.widget.LinearLayout[3]/android.widget.ImageButton[1]"));
 

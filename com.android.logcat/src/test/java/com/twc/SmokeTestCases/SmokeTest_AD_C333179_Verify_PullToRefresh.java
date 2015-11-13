@@ -38,9 +38,10 @@ public class SmokeTest_AD_C333179_Verify_PullToRefresh extends Driver {
 	public void Verify_PulltoRefresh() throws IOException, InterruptedException
 	{
 		
-Thread.sleep(4000);
+        Thread.sleep(4000);
 		String originalContext = Ad.getContext();
 		Ad.context("NATIVE_APP");
+        
 		//Read from PropertyFilePath
 		Driver.property();
 		PropertyFile.property();

@@ -26,7 +26,7 @@ public class SmokeTest_AD_C333180_10Day extends Driver{
         
         
         //app kill and relaunch the app
-        app_Kill_Relaunch.Kill_realaunch();
+        //app_Kill_Relaunch.Kill_realaunch();
         
         String originalContext = Ad.getContext();
         Ad.context("NATIVE_APP");
@@ -54,7 +54,7 @@ public class SmokeTest_AD_C333180_10Day extends Driver{
             {
                 System.out.println("10Day section is displayed and tapping on EXTENDED FORECAST/WEEKEND FORECAST button");
                 
-                System.out.println("Extended Present");
+                System.out.println("10Day_Extended Present");
                 try{
                     
                     Ad.findElement(By.id("com.weather.Weather:id/more")).click();

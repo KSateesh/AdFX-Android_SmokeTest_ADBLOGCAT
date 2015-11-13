@@ -11,9 +11,8 @@ public class Swipe extends Driver {
 		Dimension dimensions = Ad.manage().window().getSize();
 		// System.out.println("dimensions :: "+dimensions);
 		int scrollStart = 2300;
-		int scrollEnd = 50;
+		int scrollEnd = 60;
 		Ad.swipe(0, scrollStart, 0, scrollEnd, 2000);
-		// Ad.swipe(0,scrollStart,0,scrollEnd,2000);
-	
+        
 	}
 }

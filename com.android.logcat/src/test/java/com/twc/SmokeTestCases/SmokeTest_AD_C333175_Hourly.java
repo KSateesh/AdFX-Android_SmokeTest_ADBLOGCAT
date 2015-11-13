@@ -29,7 +29,7 @@ public class SmokeTest_AD_C333175_Hourly extends Driver {
     public void verify_adpresent_onextendedHourly_page() throws Exception {
         
         // app kill and relaunch the app
-        app_Kill_Relaunch.Kill_realaunch();
+        //app_Kill_Relaunch.Kill_realaunch();
         
         String originalContext = Ad.getContext();
         Ad.context("NATIVE_APP");

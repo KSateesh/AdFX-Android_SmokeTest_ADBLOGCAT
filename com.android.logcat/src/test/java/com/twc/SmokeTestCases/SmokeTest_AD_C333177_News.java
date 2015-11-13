@@ -20,8 +20,9 @@ public class SmokeTest_AD_C333177_News extends Driver{
     
     public void verify_adpresent_onextendedMap_page() throws Exception
     {
-        
-        app_Kill_Relaunch.Kill_realaunch();
+    
+        //app kill and relaunch the app
+       // app_Kill_Relaunch.Kill_realaunch();
         
         String originalContext = Ad.getContext();
         Ad.context("NATIVE_APP");

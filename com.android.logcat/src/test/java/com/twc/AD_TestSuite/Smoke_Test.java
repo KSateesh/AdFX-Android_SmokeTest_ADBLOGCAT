@@ -7,6 +7,7 @@ import org.testng.annotations.BeforeClass;
 import com.twc.AppiumAutoStart.Capabilities_android;
 import com.twc.General.DeleteFile;
 import com.twc.General.File_Exist;
+import com.twc.General.app_Kill_Relaunch;
 import com.twc.General.setAddress_Location;
 import com.twc.General.toKnowBuildVersion;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333175_Hourly;
@@ -15,16 +16,12 @@ import com.twc.SmokeTestCases.SmokeTest_AD_C333177_News;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333179_Verify_PullToRefresh;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333180_10Day;
 import com.twc.driver.Driver;
-
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
-
 import io.appium.java_client.AppiumDriver;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
@@ -34,46 +31,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
-import atu.testng.reports.ATUReports;
-import atu.testng.reports.listeners.ATUReportsListener;
-import atu.testng.reports.listeners.ConfigurationListener;
-import atu.testng.reports.listeners.MethodListener;
-import atu.testng.reports.logging.LogAs;
-import atu.testng.selenium.reports.CaptureScreen;
-import atu.testng.selenium.reports.CaptureScreen.ScreenshotOf;
-
-
 public class Smoke_Test extends Driver{
 
-	
-	@Test
-	public void Capabilites() throws ParseException, IOException, InterruptedException
-  {
-		 //Calling the capabilities method
-		Capabilities_android cap = new Capabilities_android();
-	    cap.dcap();
-	
-	    //Calling the method to know build version of the app class
-//	toKnowBuildVersion buildVersion = new toKnowBuildVersion();
-//		buildVersion.moreOptionsClick();
-		
-		//Calling the method to know build version of the app class
-//		setAddress_Location sa = new setAddress_Location();
-//			sa.setLocation();
-
-	//Delete the log existed file
-	DeleteFile DF = new DeleteFile();
-	File_Exist FE = new File_Exist();
-	
-	if(FE.fileexist()) {
-		DF.deleteFile();
-
-	} else {
-		System.out.println("File not exist");
-	}
-	
-	
-  }
 	
 	//Pull to Refresh
 	@Test (priority=1, threadPoolSize = 1,invocationCount = 1)
@@ -102,7 +61,7 @@ public class Smoke_Test extends Driver{
 	}
 	
 
-	//	Maps page Ad
+	//Maps page Ad
 	@Test(priority=4, threadPoolSize = 1,invocationCount = 1)
 	public void c334147_Verify_adon_MapsExtended_page() throws Exception {
 
@@ -119,4 +78,45 @@ public class Smoke_Test extends Driver{
 		c334148.verify_adpresent_onextendedMap_page();
 
 	}
+    
+    @BeforeTest
+    public void beforeTest() throws Exception {
+        
+        //Calling the capabilities method
+        Capabilities_android cap = new Capabilities_android();
+        cap.dcap();
+        
+        //Delete the log existed file
+        DeleteFile DF = new DeleteFile();
+        File_Exist FE = new File_Exist();
+        
+        if(FE.fileexist()) {
+            DF.deleteFile();
+            
+        } else {
+            System.out.println("File not exist");
+        }
+    }
+    
+    @BeforeClass
+    public void beforeClass() throws Exception {
+        
+        // Calling the method to know build version of the app class
+        toKnowBuildVersion buildVersion = new toKnowBuildVersion();
+        buildVersion.moreOptionsClick();
+        
+        // Calling the method to know build version of the app class
+        // setAddress_Location sa = new setAddress_Location();
+        // sa.setLocation();
+    }
+    
+    
+    @BeforeMethod
+    public void Kill_Launch() throws Exception {
+        
+        System.out.println("Killing the app and relaunch the app");
+        app_Kill_Relaunch.Kill_realaunch();
+        
+    }
+    
 }

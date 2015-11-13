@@ -23,7 +23,7 @@ public class SmokeTest_AD_C333176_Map extends Driver{
     {
         
         //app kill and relaunch the app
-        app_Kill_Relaunch.Kill_realaunch();
+        //app_Kill_Relaunch.Kill_realaunch();
         
         String originalContext = Ad.getContext();
         Ad.context("NATIVE_APP");
