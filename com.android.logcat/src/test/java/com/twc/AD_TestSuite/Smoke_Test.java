@@ -10,11 +10,15 @@ import com.twc.General.File_Exist;
 import com.twc.General.app_Kill_Relaunch;
 import com.twc.General.setAddress_Location;
 import com.twc.General.toKnowBuildVersion;
+import com.twc.SmokeTestCases.SmokeTest_AD_C333173_Verify_WeatherFX_ApiCall;
+import com.twc.SmokeTestCases.SmokeTest_AD_C333174_FactualCall;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333175_Hourly;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333176_Map;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333177_News;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333179_Verify_PullToRefresh;
 import com.twc.SmokeTestCases.SmokeTest_AD_C333180_10Day;
+import com.twc.SmokeTestCases.SmokeTest_AD_C333180_10Day_1;
+import com.twc.SmokeTestCases.SmokeTest_AD_C333182_Verify_Lotame_onApp_Launch;
 import com.twc.driver.Driver;
 import org.testng.ITestResult;
 import org.testng.annotations.Test;
@@ -25,62 +29,74 @@ import java.io.IOException;
 import org.json.simple.parser.ParseException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 
+@SuppressWarnings("unused")
 public class Smoke_Test extends Driver{
-
-	
-	//Pull to Refresh
-	@Test (priority=1, threadPoolSize = 1,invocationCount = 1)
-	public void AND_PulltoRefresh() throws ParseException, IOException, InterruptedException
-	{
-	
-		SmokeTest_AD_C333179_Verify_PullToRefresh pulltorefresh = new SmokeTest_AD_C333179_Verify_PullToRefresh();
-		pulltorefresh.Verify_PulltoRefresh();
-	}
-	
-	//Hourly Ad
-	@Test(priority=2, threadPoolSize = 1,invocationCount = 1 )
-	public void c334146_Verify_adon_HourlyExtended_page() throws Exception {
-		SmokeTest_AD_C333175_Hourly c334146 = new SmokeTest_AD_C333175_Hourly();
-		c334146.verify_adpresent_onextendedHourly_page();
-
-	}
-	
-	//10 Day Ad
-	@Test(priority=3, threadPoolSize = 1,invocationCount = 1)
-	public void c334151_Verify_adon_10DaysExtended_page() throws Exception {
-
-		SmokeTest_AD_C333180_10Day c334151 = new SmokeTest_AD_C333180_10Day();
-		c334151.verify_adpresent_onextendedTendays_page();
-
-	}
-	
-
-	//Maps page Ad
-	@Test(priority=4, threadPoolSize = 1,invocationCount = 1)
-	public void c334147_Verify_adon_MapsExtended_page() throws Exception {
-
-		SmokeTest_AD_C333176_Map c334147 = new SmokeTest_AD_C333176_Map();
-		c334147.verify_adpresent_onextendedMap_page();
-
-	}
-	
-	//News Page Ad	
-	@Test(priority=5, threadPoolSize = 1,invocationCount = 1)
-	public void c334148_Verify_adon_NewsExtended_page() throws Exception {
-
-		SmokeTest_AD_C333177_News c334148 = new SmokeTest_AD_C333177_News();
-		c334148.verify_adpresent_onextendedMap_page();
-
-	}
     
-    @BeforeTest
-    public void beforeTest() throws Exception {
+    //Pull to Refresh
+    @Test (priority=1, threadPoolSize = 1,invocationCount = 1)
+    public void AD_C333179_Verify_PulltoRefresh() throws ParseException, IOException, InterruptedException
+    {
+        
+        SmokeTest_AD_C333179_Verify_PullToRefresh pulltorefresh = new SmokeTest_AD_C333179_Verify_PullToRefresh();
+        pulltorefresh.Verify_PulltoRefresh();
+    }
+   
+    
+    //Hourly Ad
+    @Test(priority=2, threadPoolSize = 1,invocationCount = 1 )
+    public void AD_C333175_Verify_Ad_On_HourlyExtended_page() throws Exception {
+        
+        SmokeTest_AD_C333175_Hourly hourlyExtend = new SmokeTest_AD_C333175_Hourly();
+        hourlyExtend.verify_adpresent_onextendedHourly_page();
+        
+    }
+    
+    //10 Day Ad
+    @Test(priority=3, threadPoolSize = 1,invocationCount = 1)
+    public void AD_C333180_Verify_Ad_On_10DayExtended_page() throws Exception {
+        
+        SmokeTest_AD_C333180_10Day tendayExtended = new SmokeTest_AD_C333180_10Day();
+        tendayExtended.verify_adpresent_onextendedTenday_page();
+        
+    }
+    
+    
+    //	Maps page Ad
+    @Test(priority=4, threadPoolSize = 1,invocationCount = 1)
+    public void AD_C333176_Verify_Ad_On_MapsExtended_page() throws Exception {
+        
+        SmokeTest_AD_C333176_Map mapsExtended = new SmokeTest_AD_C333176_Map();
+        mapsExtended.verify_adpresent_onextendedMap_page();
+        
+    }
+    
+    //News Page Ad
+    @Test(priority=5, threadPoolSize = 1,invocationCount = 1)
+    public void AD_C333177_Verify_Ad_On_NewsExtended_page() throws Exception {
+        
+        SmokeTest_AD_C333177_News newsExtended = new SmokeTest_AD_C333177_News();
+        newsExtended.verify_adpresent_onextendedNews_page();
+        
+    }
+    
+    //Weather FX Cal
+    @Test(priority=6, threadPoolSize = 1,invocationCount = 1)
+    public void AD_C333173_Verify_WeatherFX_ApiCall() throws Exception {
+        SmokeTest_AD_C333173_Verify_WeatherFX_ApiCall WeatherFX_ApiCall = new SmokeTest_AD_C333173_Verify_WeatherFX_ApiCall();
+        WeatherFX_ApiCall.verify_WeatherFX_Apicall_On_FreshLaunch();
+        
+    }
+    
+    
+        @BeforeTest
+    public void Capabilities_Launch() throws Exception {
         
         //Calling the capabilities method
         Capabilities_android cap = new Capabilities_android();
@@ -99,24 +115,25 @@ public class Smoke_Test extends Driver{
     }
     
     @BeforeClass
-    public void beforeClass() throws Exception {
+    public void getBuildVersion() throws Exception {
         
         // Calling the method to know build version of the app class
-        toKnowBuildVersion buildVersion = new toKnowBuildVersion();
-        buildVersion.moreOptionsClick();
+        		toKnowBuildVersion buildVersion = new toKnowBuildVersion();
+        		buildVersion.moreOptionsClick();
         
         // Calling the method to know build version of the app class
         // setAddress_Location sa = new setAddress_Location();
         // sa.setLocation();
+        
     }
     
-    
     @BeforeMethod
-    public void Kill_Launch() throws Exception {
+    public void App_Kill_ReLaunch() throws Exception {
         
         System.out.println("Killing the app and relaunch the app");
         app_Kill_Relaunch.Kill_realaunch();
         
     }
+    
     
 }
