@@ -94,6 +94,13 @@ public class Smoke_Test extends Driver{
         
     }
     
+    //LotameAdTargeting_On_AppLaunch
+    @Test(priority=7, threadPoolSize = 1,invocationCount = 1)
+    public void AD_C333182_LotameAdTargeting_On_AppLaunch() throws Exception
+    {
+        SmokeTest_AD_C333182_Verify_Lotame_onApp_Launch LotameAdTarget = new SmokeTest_AD_C333182_Verify_Lotame_onApp_Launch();
+        LotameAdTarget.Verify_LotameCall_onapp_launch();
+    }
     
         @BeforeTest
     public void Capabilities_Launch() throws Exception {
